@@ -12,16 +12,6 @@ class HandleService:
 
     # Result Gotten from each service health check
     # This would be appended to the result list
-    output = {
-        'service': None,
-        'message': None,
-        'status': None,
-        'uptime': uptime,
-        'downtime': downtime
-        }
-    result = [
-        
-    ]
 
     def process_services(self, services):
         # Get the Number Of Total Service List That is passed to this method
@@ -38,27 +28,36 @@ class HandleService:
     # Checks the Service and append the result
     def check_service(self, service):
         if service is None:
-            self.output['message'] = 'Please Provide Service!'
+            self.message = 'Please Provide Service!'
             
         elif self.check_service_status(service):
+            self.output = {
+                'service': None,
+                'message': None,
+                'status': None,
+                'uptime': self.uptime,
+                'downtime': self.downtime
+                }
             self.output['service'] = service
             self.output['status'] = 'Online'
             self.output['uptime'] = datetime.datetime.utcnow()
             self.output['message'] = "This Service is Available and Working Fine"     
-            self.all_services.append(self.output['service'])
-            self.all_services.append(self.output['status'])
-            self.all_services.append(self.output['uptime'])
-            self.all_services.append(self.output['message'])
+            self.all_services.append(self.output)
             return self.all_services
+            
         elif self.check_service_status(service) == False:
+            self.output = {
+                'service': None,
+                'message': None,
+                'status': None,
+                'uptime': self.uptime,
+                'downtime': self.downtime
+                }
             self.output['service'] = service
             self.output['status'] = 'Fail'
             self.output['uptime'] = datetime.datetime.utcnow()
             self.output['message'] = "This Service is Not Found! - Does Not Exist!"
-            self.all_services.append(self.output['service'])
-            self.all_services.append(self.output['status'])
-            self.all_services.append(self.output['uptime'])
-            self.all_services.append(self.output['message'])
+            self.all_services.append(self.output)
             return self.all_services
 
     # Check the service status and availabilty

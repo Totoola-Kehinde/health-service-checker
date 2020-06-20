@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table class="table table-striped table-inverse table-responsive">
+    <thead class="thead-inverse">
+        <tr class="info">
+            <th colspan="5">Managing Users Microservices</th>
+        </tr>
+        <tr>
+            <th>Mircoservice</th>
+            <th>Message</th>
+            <th>Status</th>
+            <th>Uptime</th>
+            <th>Downtime</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for item in UsersData %}
+            <tr>
+                <td scope="row">{{item['service']}}</td>
+                <td>{{item['message']}}</td>
+                <td>{{item['status']}}</td>
+                <td>{{item['uptime']}}</td>
+                <td>{{item['downtime']}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+<table class="table table-striped table-inverse table-responsive">
+    <thead class="thead-inverse">
+        <tr class="info">
+            <th colspan="5">SMS Notifications Microservices</th>
+        </tr>
+        <tr>
+            <th>Mircoservice</th>
+            <th>Message</th>
+            <th>Status</th>
+            <th>Uptime</th>
+            <th>Downtime</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for item in smsData %}
+            <tr>
+                <td scope="row">{{item['service']}}</td>
+                <td>{{item['message']}}</td>
+                <td>{{item['status']}}</td>
+                <td>{{item['uptime']}}</td>
+                <td>{{item['downtime']}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+<table class="table table-striped table-inverse table-responsive">
+    <thead class="thead-inverse">
+        <tr class="info">
+            <th colspan="5">Managing Static and External Pages Microservices</th>
+        </tr>
+        <tr>
+            <th>Mircoservice</th>
+            <th>Message</th>
+            <th>Status</th>
+            <th>Uptime</th>
+            <th>Downtime</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for item in managePagesData %}
+            <tr>
+                <td scope="row">{{item['service']}}</td>
+                <td>{{item['message']}}</td>
+                <td>{{item['status']}}</td>
+                <td>{{item['uptime']}}</td>
+                <td>{{item['downtime']}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+<table class="table table-striped table-inverse table-responsive">
+    <thead class="thead-inverse">
+        <tr class="info">
+            <th colspan="5">Email Notifications Microservices</th>
+        </tr>
+        <tr>
+            <th>Mircoservice</th>
+            <th>Message</th>
+            <th>Status</th>
+            <th>Uptime</th>
+            <th>Downtime</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for item in emailData %}
+            <tr>
+                <td scope="row">{{item['service']}}</td>
+                <td>{{item['message']}}</td>
+                <td>{{item['status']}}</td>
+                <td>{{item['uptime']}}</td>
+                <td>{{item['downtime']}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+<table class="table table-striped table-inverse table-responsive">
+    <thead class="thead-inverse">
+        <tr class="info">
+            <th colspan="5">Managing Company Settings Microservices</th>
+        </tr>
+        <tr>
+            <th>Mircoservice</th>
+            <th>Message</th>
+            <th>Status</th>
+            <th>Uptime</th>
+            <th>Downtime</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for item in companyData %}
+            <tr>
+                <td scope="row">{{item['service']}}</td>
+                <td>{{item['message']}}</td>
+                <td>{{item['status']}}</td>
+                <td>{{item['uptime']}}</td>
+                <td>{{item['downtime']}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+<table class="table table-striped table-inverse table-responsive">
+    <thead class="thead-inverse">
+        <tr class="info">
+            <th colspan="5">Authentication Microservices</th>
+        </tr>
+        <tr>
+            <th>Mircoservice</th>
+            <th>Message</th>
+            <th>Status</th>
+            <th>Uptime</th>
+            <th>Downtime</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for item in authData %}
+            <tr>
+                <td scope="row">{{item['service']}}</td>
+                <td>{{item['message']}}</td>
+                <td>{{item['status']}}</td>
+                <td>{{item['uptime']}}</td>
+                <td>{{item['downtime']}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+
+
+{% endblock content %}
